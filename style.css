@@ -2,83 +2,75 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: #343a40;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
 }
 
-main{
+main {
+    display: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     
 }
 
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.text {
     text-align: center;
-    border: 1px solid white;
-    padding: 20px;
-    width: 500px;
-    height: 100px;
-    box-shadow: 5px 5px 5px black;
+    margin-bottom: 20px; /* Espaço entre o texto e os carros/pista */
+}
+
+.container {
+    position: relative;
+    width: 500px;  /* Largura da pista */
+    height: 300px; /* Altura da pista */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .track {
-    background-image: url(assets/img/track.gif);
-    width: 500px;
-    height: 100px;
+    background-image: url(assets/img/track.gif); /* Caminho da sua GIF da pista */
+    width: 600px;
+    height: 200px;
     background-repeat: no-repeat;
     background-size: cover;
-    position: absolute;
-    z-index: 1;
+    position: relative;
 }
 
 #white, #red {
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    transition: transform 0.1s ease-in-out;  /* Transição suave para a transformação */
+    top: 50%; /* Centraliza os carros verticalmente dentro da pista */
+    transform: translateY(-50%); /* Compensa a altura dos carros para centralizar */
+    transition: transform 0.1s ease-in-out;
 }
 
 #white {
-    width: 50px;
-    height: 50px;
-    left: 205px;
-    top: 60px;
+    width: 60px;
+    height: 60px;
+    left: 180px; /* Posição do carro branco */
     background-image: url(assets/img/white_lotus.png);
-    z-index: 2;
-}
-
-#red {
-    width: 50px;
-    height: 50px;
-    right: 205px;
-    top: 60px;
-    background-image: url(assets/img/red_jaguar.png);
     z-index: 3;
 }
 
-.text {
-    text-align: center;
+#red {
+    width: 55px;
+    height: 55px;
+    left: 265px; /* Posição do carro vermelho */
+    background-image: url(assets/img/red_jaguar.png);
+    z-index: 3;
 }
 
 #result {
     font-size: 30px;
 }
 
-audio {
-    position: absolute;
-    top: 200px;
-    left: 120px;
-    z-index: 4;
-    visibility: collapse;
-}
-
 nav {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .btn_circle_1, .btn_circle_2, .btn {
@@ -92,48 +84,43 @@ nav {
     height: 20px;
     width: 120px;
     text-align: center;
-    display: none;
+    display: none;  
 }
 
 .btn_circle_1 {
     background-color: white;
     height: 20px;
     width: 20px;
-    display: block;
 }
 
 .btn_circle_2 {
     background-color: DarkRed;
     height: 20px;
     width: 20px;
-    display: block;
 }
 
+/* Rodapé fixo */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 20px;
-}
-
-.footer {
     text-align: center;
     padding: 10px;
     background-color: #343a40;
     color: lightgray;
     width: 100%;
-    position: relative;
+    position: absolute;
     bottom: 0;
-  }
-  
-  .social-links {
-    margin-bottom: 10px;
-  }
-  
-  .logo {
+}
+
+/* Estilo para ícones sociais */
+.social-icons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-icons img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 1px solid #333;
     margin: 0 5px;
-  }
+    cursor: pointer;
+}
