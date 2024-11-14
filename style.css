@@ -7,6 +7,10 @@ body, html {
     color: white;
 }
 
+main{
+    
+}
+
 .container {
     position: absolute;
     top: 50%;
@@ -111,3 +115,25 @@ footer {
     width: 100%;
     padding: 20px;
 }
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #343a40;
+    color: lightgray;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+  
+  .social-links {
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    margin: 0 5px;
+  }
